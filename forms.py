@@ -9,11 +9,15 @@ class SignupForm(Form):
 	password = PasswordField('Password', validators=[DataRequired("Please enter your password."), Length(min=6,message="Please enter password contain 6 chracter min.")])
 	submit = SubmitField('Sign Up')
 
-class LoginForm(Form):
+class LoginForm(Form ):
 	email = StringField('Email', validators=[DataRequired("Please enter your email."),Email("Please check your email address.")])
 	password = PasswordField('Password', validators=[DataRequired("Please enter your password.")])
 	submit = SubmitField('Sign In')
 
+
+class AddressForm(Form):
+	address = StringField('Address', validators=[DataRequired("Please enter an address.")])
+	submit = SubmitField("Search")
 
 	
 	
